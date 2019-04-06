@@ -1,4 +1,4 @@
-package com.chain.service01.model;
+package com.chain.service02.model;
 
 import java.util.Date;
 
@@ -18,4 +18,10 @@ public interface PeopleMapper {
 	
 	@Select("SELECT name FROM people WHERE id=#{id}")
 	String getName(@Param("id") Long id);
+	
+	@Update("UPDATE people SET age=#{age} WHERE id=#{id}")
+	int insertAge(@Param("id") Long id, @Param("age") Integer age);
+	
+	@Select("SELECT age FROM people WHERE id=#{id}")
+	Integer getAge(@Param("id") Long id);
 }
